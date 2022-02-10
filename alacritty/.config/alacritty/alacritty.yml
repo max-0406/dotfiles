@@ -17,7 +17,7 @@ font:
   italic:
     family: Code New Roman
     style: Italic
-  size: 16
+  size: 10
 
 colors:
   primary:
