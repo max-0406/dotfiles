@@ -2,6 +2,8 @@
 
 My dotfiles managed by [GNU Stow](https://www.gnu.org/software/stow/). 
 
+![](https://github.com/max-0406/dotfiles/blob/main/screenshots/1.png)
+
 ## Setup
 
 - OS: [Arch Linux](https://archlinux.org/)
@@ -26,3 +28,8 @@ stow nvim
 
 # you can also stow multipule programs at a time
 stow zsh awesome
+```
+
+# Screenshots
+
+![](https://github.com/max-0406/dotfiles/blob/main/screenshots/append.png)
