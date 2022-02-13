@@ -2,7 +2,7 @@
 
 My dotfiles managed by [GNU Stow](https://www.gnu.org/software/stow/). 
 
-![](https://github.com/max-0406/dotfiles/blob/main/screenshots/1.png)
+![](https://github.com/max-0406/dotfiles/blob/main/screenshots/hor.png)
 
 ## Setup
 
@@ -32,4 +32,4 @@ stow zsh awesome
 
 # Screenshots
 
-![](https://github.com/max-0406/dotfiles/blob/main/screenshots/append.png)
+![](https://github.com/max-0406/dotfiles/blob/main/screenshots/vert.png)

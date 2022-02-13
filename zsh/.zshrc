@@ -14,7 +14,6 @@ setopt prompt_subst
 zstyle ':vcs_info:git:*' formats '(%b) '
 
 PROMPT='%F{8}[%T]%f %F{14}%n%f%F{8}:%f%B%F{5}%C%f%b %F{10}${vcs_info_msg_0_}%f%F{8}|%f '
-RPROMPT='%(?.:).:()'
 
 setopt histignorealldups sharehistory
 

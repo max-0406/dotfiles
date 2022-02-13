@@ -46,7 +46,7 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init("/home/max/.config/awesome/themes/xresources/theme.lua")
-beautiful.font = "SourceCodePro 10"
+beautiful.font = "SourceCodePro 12"
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
@@ -82,7 +82,8 @@ awful.layout.layouts = {
 -- }}}
 
 -- {{{ Wibar
-mytextclock = wibox.widget.textclock()
+date = wibox.widget.textclock(" %a %b %d ")
+time = wibox.widget.textclock("%H:%M",10)
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -140,6 +141,8 @@ end
 screen.connect_signal("property::geometry", set_wallpaper)
 
 awful.screen.connect_for_each_screen(function(s)
+    s.padding = {top = 19}
+
     -- Wallpaper
     set_wallpaper(s)
 
@@ -151,6 +154,7 @@ awful.screen.connect_for_each_screen(function(s)
     -- Create an imagebox widget which will contain an icon indicating which layout we're using.
     -- We need one layoutbox per screen.
     s.mylayoutbox = awful.widget.layoutbox(s)
+    s.mylayoutbox = wibox.container.margin(s.mylayoutbox, 13, 8, 8, 8)
     s.mylayoutbox:buttons(gears.table.join(
                            awful.button({ }, 1, function () awful.layout.inc( 1) end),
                            awful.button({ }, 3, function () awful.layout.inc(-1) end),
@@ -171,22 +175,32 @@ awful.screen.connect_for_each_screen(function(s)
     }
 
     -- Create the wibox
-    s.mywibox = awful.wibox({ position = "top", width = 1870, height = 35, screen = s })
-    s.mywibox.y = 10
+    s.mywibox = awful.wibox({ position = "top", width = 1870, height = 35, screen = s, stretch = false, margins = 0})
+    s.mywibox.y = 20
+
     -- Add widgets to the wibox
     s.mywibox:setup {
-        layout = wibox.layout.align.horizontal,
-        { -- Left widgets
-            layout = wibox.layout.fixed.horizontal,
-            s.mytaglist,
-            s.mypromptbox,
-        },
-        s.mytasklist, -- Middle widget
-        { -- Right widgets
-            layout = wibox.layout.fixed.horizontal,
-            s.mylayoutbox,
-	    mytextclock
-        },
+	layout = wibox.layout.stack,
+	{
+	    layout = wibox.layout.align.horizontal,
+	    { -- Left widgets
+		layout = wibox.layout.fixed.horizontal,
+		s.mylayoutbox,
+		s.mytaglist,
+		s.mypromptbox,
+	    },
+	    nil,
+	    { -- Right widgets
+		layout = wibox.layout.fixed.horizontal,
+		date,
+	    },
+	},
+	{
+	    time,
+	    valign = "center",
+	    halign = "center",
+	    layout = wibox.container.place
+	}
     }
 end)
 -- }}}
