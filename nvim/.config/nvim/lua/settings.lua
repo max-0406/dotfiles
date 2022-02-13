@@ -8,7 +8,7 @@ vim.opt.swapfile = false
 vim.opt.guicursor = "" -- disable cursor-styling
 
 vim.cmd([[
-colorscheme dracula
+colorscheme nord
 syntax enable
 
 augroup vimrc-incsearch-highlight

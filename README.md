@@ -2,17 +2,17 @@
 
 My dotfiles managed by [GNU Stow](https://www.gnu.org/software/stow/). 
 
-![](https://github.com/max-0406/dotfiles/blob/main/screenshot.png)
+## Setup
 
-## Programs
-
-```
-alacritty  - terminal emulator
-i3         - tiling window manager
-nvim       - text editor
-zsh        - shell
-zathura    - document viewer
-```
+- OS: [Arch Linux](https://archlinux.org/)
+- WM: [Awesome](https://github.com/awesomeWM/awesome)
+- Colorscheme: [Nord](https://www.nordtheme.com/)
+- Terminal: [Alacritty](https://github.com/alacritty/alacritty)
+- Shell: [zsh](https://www.zsh.org/)
+- Editor: [Neovim](https://github.com/neovim/neovim/)
+- Compositor: [picom](https://github.com/yshui/picom)
+- Document Viewer: [zathura](https://pwmt.org/projects/zathura/)
+- Fonts: [Source Code Pro](https://github.com/adobe-fonts/source-code-pro)
 
 ## Usage
 
@@ -21,10 +21,8 @@ cd ~
 git clone https://github.com/max-0406/dotfiles
 cd dotfiles
 
-# and stow whatever you want
+# stow whatever you want
 stow nvim
 
-# or install/uninstall all program
-./install.sh
-./uninstall.sh
-```
+# you can also stow multipule programs at a time
+stow zsh awesome

@@ -1,5 +1,10 @@
+export PF_INFO="ascii title os kernel shell pkgs memory"
+pfetch
+
 #alias
-alias ls='ls --color=auto'
+alias ls='lsd'
+alias la='lsd -a'
+alias ll='lsd -la'
 
 # Set up the prompt
 autoload -Uz vcs_info
@@ -13,8 +18,8 @@ RPROMPT='%(?.:).:()'
 
 setopt histignorealldups sharehistory
 
-# Use emacs keybindings even if our EDITOR is set to vi
-bindkey -e
+# Use vim keybindings
+bindkey -v
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
