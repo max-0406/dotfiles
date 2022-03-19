@@ -1,6 +1,6 @@
 # dotfiles
 
-My dotfiles managed by [GNU Stow](https://www.gnu.org/software/stow/). 
+My dotfiles for awesome wm.
 
 ![](https://github.com/max-0406/dotfiles/blob/main/screenshots/hor.png)
 
@@ -15,20 +15,6 @@ My dotfiles managed by [GNU Stow](https://www.gnu.org/software/stow/).
 - Compositor: [picom](https://github.com/yshui/picom)
 - Document Viewer: [zathura](https://pwmt.org/projects/zathura/)
 - Fonts: [Source Code Pro](https://github.com/adobe-fonts/source-code-pro)
-
-## Usage
-
-```bash
-cd ~
-git clone https://github.com/max-0406/dotfiles
-cd dotfiles
-
-# stow whatever you want
-stow nvim
-
-# you can also stow multipule programs at a time
-stow zsh awesome
-```
 
 # Screenshots
 
