@@ -2,7 +2,7 @@
 
 My dotfiles for awesome wm.
 
-![](https://github.com/max-0406/dotfiles/blob/main/screenshots/hor.png)
+![](https://github.com/max-0406/dotfiles/blob/awesome/screenshots/hor.png)
 
 ## Setup
 
@@ -18,4 +18,4 @@ My dotfiles for awesome wm.
 
 # Screenshots
 
-![](https://github.com/max-0406/dotfiles/blob/main/screenshots/vert.png)
+![](https://github.com/max-0406/dotfiles/blob/awesome/screenshots/vert.png)
