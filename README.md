@@ -2,7 +2,7 @@
 
 My dotfiles for xmonad.
 
-![](https://github.com/max-0406/dotfiles/blob/xmonad/screenshots/hor.jpg)
+![](https://github.com/max-0406/dotfiles/blob/xmonad/screenshots/hor.png)
 
 ## Setup
 
@@ -15,4 +15,4 @@ My dotfiles for xmonad.
 - Document Viewer: [zathura](https://pwmt.org/projects/zathura/)
 - Fonts: [Source Code Pro](https://github.com/adobe-fonts/source-code-pro)
 
-![](https://github.com/max-0406/dotfiles/blob/xmonad/screenshots/vert.jpg)
+![](https://github.com/max-0406/dotfiles/blob/xmonad/screenshots/vert.png)
