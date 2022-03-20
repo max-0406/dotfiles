@@ -35,9 +35,11 @@ fi
 # set wallpaper
 feh --bg-scale Pictures/wallpaper.jpg
 
+# start compositor
+picom -b
+
 # start polybar
 ./.config/polybar/launch.sh &
 
 # start window manager
-# exec awesome
 exec xmonad

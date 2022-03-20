@@ -70,14 +70,14 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((0, xF86XK_AudioRaiseVolume   ), spawn "amixer set Master 2%+")
     , ((0, xF86XK_AudioMute          ), spawn "amixer set Master toggle")
 
+    -- take screenshot
+    , ((0, xK_Print          ), spawn "import ~/Pictures/`date +%Y-%m-%d_%H:%M:%S`.jpg")
+
     -- launch rofi
     , ((modm,               xK_p     ), spawn "rofi -show drun")
 
     -- launch xsecurelock
     , ((modm,               xK_x     ), spawn "xsecurelock")
-
-    -- launch gmrun
-    , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
 
     -- close focused window
     , ((modm .|. shiftMask, xK_c     ), kill)
@@ -126,12 +126,6 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- Deincrement the number of windows in the master area
     , ((modm              , xK_period), sendMessage (IncMasterN (-1)))
-
-    -- Toggle the status bar gap
-    -- Use this binding with avoidStruts from Hooks.ManageDocks.
-    -- See also the statusBar function from Hooks.DynamicLog.
-    --
-    -- , ((modm              , xK_b     ), sendMessage ToggleStruts)
 
     -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
@@ -257,10 +251,7 @@ myLogHook = return ()
 --
 -- By default, do nothing.
 myStartupHook = do
-	spawnOnce "picom -b"
-	spawnOnce "ibus-daemon -d"
-	spawnOnce "polybar example"
-
+    spawn "ibus-daemon -d"
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
 

@@ -1,11 +1,12 @@
 [bar/left]
 background = ${xrdb:background}
 foreground = ${xrdb:foreground}
-font-0 = "SauceCodePro Nerd Font Mono:size=12;2"
+font-0 = "Source Code Pro:size=12;2"
+font-1 = "SauceCodePro Nerd Font Mono:size=17;4"
 
 offset-x = 1%
 offset-y = 1.6%
-width = 5%
+width = 6%
 height = 30
 radius = 15.0
 
@@ -14,11 +15,12 @@ modules-center = date
 [bar/center]
 background = ${xrdb:background}
 foreground = ${xrdb:foreground}
-font-0 = "SauceCodePro Nerd Font Mono:size=12;2"
+font-0 = "Source Code Pro:size=12;2"
+font-1 = "SauceCodePro Nerd Font Mono:size=17;4"
 
-offset-x = 48%
+offset-x = 47.5%
 offset-y = 1.6%
-width = 4%
+width = 5%
 height = 30
 radius = 15.0
 modules-center = time
@@ -26,32 +28,77 @@ modules-center = time
 [bar/right]
 background = ${xrdb:background}
 foreground = ${xrdb:foreground}
-font-0 = "SauceCodePro Nerd Font Mono:size=12;2"
+font-0 = "Source Code Pro:size=12;2"
+font-1 = "SauceCodePro Nerd Font Mono:size=17;4"
+font-2 = "SauceCodePro Nerd Font Mono:size=8;2"
 
-offset-x = 91%
+offset-x = 85%
 offset-y = 1.6%
-width = 8%
+width = 14%
 height = 30
 radius = 15.0
 module-margin = 1
-modules-center = alsa battery
+modules-center = network alsa battery
 
 [module/date]
 type = internal/date
-date = "%b %d"
+format = <label>
+format-prefix = ""
+format-prefix-foreground = #DDB6F2
+format-prefix-font = 2
+date = " %b %d"
+label = %date%
 
 [module/time]
 type = internal/date
-date = %H:%M
+format = <label>
+format-prefix = ""
+format-prefix-foreground = #DDB6F2
+format-prefix-font = 2
+time = " %H:%M"
+label = %time%
+
+[module/network]
+type = internal/network
+interface = wlo1
+interface-type = wireless
+interval = 3.0
+udspeed-minwidth = 5
+accumulate-stats = true
+unknown-as-up = true
+speed-unit = ''
+
+format-connected = <ramp-signal> <label-connected>
+label-connected = %essid%
+ramp-signal-0 = 
+ramp-signal-foreground = #DDB6F2
+ramp-signal-font = 2
+
+label-disconnected = 睊
+label-disconnected-foreground = #DDB6F2
+label-disconnected-font = 2
 
 [module/alsa]
 type = internal/alsa
+
 master-soundcard = default
 master-mixer = Master
+
 interval = 5
 
 format-volume = <ramp-volume> <label-volume>
-ramp-volume-0 = 墳
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+ramp-volume-4 = 
+ramp-volume-5 = 
+ramp-volume-6 = 
+ramp-volume-7 = 
+ramp-volume-8 = 
+ramp-volume-9 = 
+ramp-volume-foreground = #DDB6F2
+ramp-volume-font = 2
 
 [module/battery]
 type = internal/battery
@@ -70,12 +117,8 @@ ramp-capacity-6 = 
 ramp-capacity-7 = 
 ramp-capacity-8 = 
 ramp-capacity-9 = 
+ramp-capacity-foreground = #DDB6F2
+ramp-capacity-font = 3
 
 format-charging = <animation-charging> <label-charging>
 animation-charging-0 = 
-
-[module/workspaces-xmonad]
-type = custom/script
-exec = tail -F /tmp/.xmonad-workspace-log
-exec-if = [ -p /tmp/.xmonad-workspace-log ]
-tail = true
