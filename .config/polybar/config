@@ -1,0 +1,81 @@
+[bar/left]
+background = ${xrdb:background}
+foreground = ${xrdb:foreground}
+font-0 = "SauceCodePro Nerd Font Mono:size=12;2"
+
+offset-x = 1%
+offset-y = 1.6%
+width = 5%
+height = 30
+radius = 15.0
+
+modules-center = date
+
+[bar/center]
+background = ${xrdb:background}
+foreground = ${xrdb:foreground}
+font-0 = "SauceCodePro Nerd Font Mono:size=12;2"
+
+offset-x = 48%
+offset-y = 1.6%
+width = 4%
+height = 30
+radius = 15.0
+modules-center = time
+
+[bar/right]
+background = ${xrdb:background}
+foreground = ${xrdb:foreground}
+font-0 = "SauceCodePro Nerd Font Mono:size=12;2"
+
+offset-x = 91%
+offset-y = 1.6%
+width = 8%
+height = 30
+radius = 15.0
+module-margin = 1
+modules-center = alsa battery
+
+[module/date]
+type = internal/date
+date = "%b %d"
+
+[module/time]
+type = internal/date
+date = %H:%M
+
+[module/alsa]
+type = internal/alsa
+master-soundcard = default
+master-mixer = Master
+interval = 5
+
+format-volume = <ramp-volume> <label-volume>
+ramp-volume-0 = 墳
+
+[module/battery]
+type = internal/battery
+full-at = 99
+battery = BAT0
+poll-interval = 5
+
+format-discharging = <ramp-capacity> <label-discharging>
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
+
+format-charging = <animation-charging> <label-charging>
+animation-charging-0 = 
+
+[module/workspaces-xmonad]
+type = custom/script
+exec = tail -F /tmp/.xmonad-workspace-log
+exec-if = [ -p /tmp/.xmonad-workspace-log ]
+tail = true
