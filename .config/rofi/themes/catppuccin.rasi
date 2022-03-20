@@ -1,0 +1,65 @@
+configuration {
+  font: "Source Code Pro 14";
+
+  drun {
+    display-name: "";
+  }
+
+  timeout {
+    delay: 10;
+    action: "kb-cancel";
+  }
+}
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+
+  bg: #1E1E2E;
+  bg-alt: #1E1E2E;
+  fg: #D9E0EE;
+  fg-alt: #D9E0EE;
+
+  background-color: @bg;
+  text-color: @fg;
+}
+
+window {
+  transparency: "real";
+  width: 30%;
+}
+
+mainbox {
+  children: [inputbar, listview];
+}
+
+inputbar {
+  children: [prompt, entry];
+}
+
+entry {
+  padding: 12px 0;
+}
+
+prompt {
+  padding: 12px;
+}
+
+listview {
+  lines: 6;
+}
+
+element {
+  children: [element-text];
+}
+
+element-text {
+  padding: 12px;
+  text-color: @fg-alt;
+}
+
+element-text selected {
+  text-color: #F5C2E7;
+}
