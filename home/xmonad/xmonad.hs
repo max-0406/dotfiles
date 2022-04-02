@@ -20,7 +20,7 @@ import qualified Data.Map        as M
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
-myTerminal      = "gnome-terminal"
+myTerminal      = "urxvt"
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
@@ -64,6 +64,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- launch a terminal
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
+
+    -- bright control
+    , ((0, xF86XK_MonBrightnessUp   ), spawn "xbacklight -inc 10")
+    , ((0, xF86XK_MonBrightnessDown   ), spawn "xbacklight -dec 10")
 
     -- volume control
     , ((0, xF86XK_AudioLowerVolume   ), spawn "amixer set Master 2%-")
@@ -251,7 +255,7 @@ myLogHook = return ()
 --
 -- By default, do nothing.
 myStartupHook = do
-    spawn "ibus-daemon -d"
+    spawn "ibus-daemon -d -x"
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
 

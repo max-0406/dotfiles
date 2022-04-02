@@ -1,4 +1,4 @@
-*font: xft:sourceCodePro:size=15,xft:SauceCodePro Nerd Font Mono:size=15,xft:DejaVu Sans:size=10
+*font: xft:sourceCodePro:size=15,xft:SauceCodePro Nerd Font Mono:size=15,xft:DejaVu Sans:size=10,xft:Source Han Sans:size=15
 
 *background: #1E1E2E
 *foreground: #D9E0EE
@@ -37,4 +37,3 @@
 
 ! URxvt
 URxvt.scrollBar: false
-URxvt.inputMethod: ibus
