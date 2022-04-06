@@ -6,11 +6,12 @@ vim.opt.relativenumber = true
 vim.opt.wrap = false
 vim.opt.swapfile = false
 vim.opt.showmode = false
+vim.opt.laststatus = 3
 vim.opt.guicursor = "" -- disable cursor-styling
 
 vim.cmd([[
-colorscheme catppuccin
 syntax enable
+colorscheme catppuccin
 
 augroup vimrc-incsearch-highlight
   autocmd!
